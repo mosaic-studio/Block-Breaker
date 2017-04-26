@@ -4,10 +4,16 @@ using UnityEngine;
 
 public class LoseCollider : MonoBehaviour {
 
-    public LevelManager levelManager;
+    private LevelManager levelManager;
+
+    private void Start()
+    {
+        levelManager = FindObjectOfType<LevelManager>();
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         print("Trigger");
-        levelManager.LoadLevel("Win Screen");
+        levelManager.LoadLevel("Lose Screen");
     }
 }
